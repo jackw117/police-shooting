@@ -1,4 +1,21 @@
-/* You'll probably want to add some styles here */
+/* A few style rules to make the Police Shooting page look nicer */
 #container {
 	height:800px;
+}
+
+.container {
+	width: 95%;
+}
+
+h1 {
+	text-align: center;
+}
+
+#information {
+	text-align: center;
+	margin: 2em;
+}
+
+th, td {
+	text-align: center;
 }

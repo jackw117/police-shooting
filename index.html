@@ -1,3 +1,6 @@
+<!-- (NOTE TO SELF) use this for local server: PATH=$PATH:/c/Python34/ -->
+<!-- The html file for the Police Shooting page that plots data from police shootings in the US to a map. -->
+
 <!doctype html>
 
 <html>
@@ -5,6 +8,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jack Whitesell">
+    <meta name="description" content="A page that plots data from police shootings to a map of the United States.">
     <title>Police Shootings</title>
 
     <!-- jQuery, Bootstrap -->
@@ -22,15 +27,42 @@
    
   </head>
   <body>
-    <!-- You may want to put your title and additional informaiton here -->
+    <!-- the table with information on whether the victim was hit or killed, and if they were armed -->
     <div class="container">
-      <!-- This is the div that your map will go in.  You'll need to reference its id -->
+      <h1>Police Shootings</h1>
+      <div id="table">
+          <table class="table table-striped" style="width:100%">
+            <thead>
+              <tr>
+                <th></th>     <!-- To create an empty block -->
+                <th>Hit</th>
+                <th>Killed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Armed</th>
+                <td id="hitArmed"></td>
+                <td id="killArmed"></td>
+              </tr>
+              <tr>
+                <th>Unarmed</th>
+                <td id="hitUnarmed"></td>
+                <td id="killUnarmed"></td>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+      <!-- paragraph explaining what the page is -->
+      <div id="information">
+        <p>This map shows information on police shootings that was crowdsourced from <a href="http://regressing.deadspin.com/deadspin-police-shooting-database-update-were-still-go-1627414202">Deadspin</a> in 2014. A red circle indicates the victim was hit, while a black circle indicates that the victim was killed. Blue circles indicate either the victim was not hit, or it is unknown whether the victim survived. Clicking on a circle gives information on the incident.</p>
+      </div>
+      <!-- container for the map -->
       <div id="container"></div>
     </div>
-    <script>
-      
-      // This is where you should execute your drawMap function
-      
+    <!-- calls the drawMap function in map.js -->
+    <script id="map">
+      drawMap()
     </script>
   </body>
 </html>
